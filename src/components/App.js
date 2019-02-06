@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import "./App.css";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = process.env.API_URL || "https://brewskiesserver.herokuapp.com/";
+const apiUrl = "https://brewskiesserver.herokuapp.com/";
 const strapi = new Strapi(apiUrl);
 
 //stupid save
