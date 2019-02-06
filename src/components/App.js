@@ -68,7 +68,7 @@ class App extends Component {
   //SEARCH FOR BRAND NAMES
   //Get search to return values in the graphql format below
   searchBrands = async () => {
-    const response = await strapi.request('POST', '/graphql', {
+    const response = await strapi.request('POST', apiUrl + '/graphql', {
       data: {
         query: `query	{
           brands(where: {
