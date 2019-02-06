@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import "./App.css";
 import Strapi from "strapi-sdk-javascript/build/main";
-const apiUrl = "https://brewskiesserver.herokuapp.com/";
+const apiUrl =  window.location.hostname !== 'localhost' ? 'https://brewskiesserver.herokuapp.com/' : "http://localhost:1337";
 const strapi = new Strapi(apiUrl);
 
 //stupid save
@@ -28,7 +28,7 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const response = await strapi.request("POST", "/graphql","https://brewskiesserver.herokuapp.com/", {
+      const response = await strapi.request("POST", apiUrl + "/graphql", {
         data: {
           query: `query {
             brands {
