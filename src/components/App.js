@@ -28,7 +28,7 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const response = await strapi.request("POST", "/graphql", {
+      const response = await strapi.request("POST", "/graphql","https://brewskiesserver.herokuapp.com/", {
         data: {
           query: `query {
             brands {
